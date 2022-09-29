@@ -27,7 +27,18 @@ namespace PiEstimator
 
             // TODO: Calculate Pi
 
-            return pi;
+            for(long i = 0; i < n; i++)
+            {
+                double x = rand.NextDouble();
+                double y = rand.NextDouble();
+
+                if(x * x + y * y <= 1)
+                {
+                    pi++;
+                }
+            }
+
+            return pi/n * 4;
         }
 
         static long GetNumber(string prompt)
